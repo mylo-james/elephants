@@ -1,12 +1,29 @@
 body {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  width: 400px;
+  text-align: center;
+  color: grey;
+  text-shadow: black 0.5px 0.5px 2px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 20px;
+  border: black 1px solid;
+  background-color: white;
 }
 .app {
   width: 450px;
-  margin: auto;
   border: black solid 1px;
   padding: 20px;
   background-color: #030293;
+  box-shadow: black 2px 20px 20px;
 }
 
 form {
@@ -24,6 +41,7 @@ img {
   width: inherit;
   height: inherit;
   object-fit: cover;
+  box-shadow: black 2px 2px 20px;
 }
 
 .eleWrapper {

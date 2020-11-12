@@ -31,6 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        <h1>ELEPHANTS!</h1>
         <EleForm pics={this.state.pics} setElePhoto={this.state.setElePhoto} />
         <ElePhoto elePhoto={this.state.elePhoto} />
       </div>
