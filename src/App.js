@@ -6,10 +6,19 @@ import stick from './elephants/stick.jpg';
 import suck from './elephants/suck.jpg';
 
 //component imports
-import EleForm from './EleForm';
+import EleFormWithContext from './EleForm';
 import ElePhoto from './ElePhoto';
+import { EleContext } from './EleContext';
 
-class App extends Component {
+const App = () => (
+    <div className="app">
+        <h1>ELEPHANTS!</h1>
+        <EleFormWithContext />
+        <ElePhoto />
+    </div>
+);
+
+class AppWithContext extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -30,16 +39,11 @@ class App extends Component {
 
     render() {
         return (
-            <div className="app">
-                <h1>ELEPHANTS!</h1>
-                <EleForm
-                    pics={this.state.pics}
-                    setElePhoto={this.state.setElePhoto}
-                />
-                <ElePhoto elePhoto={this.state.elePhoto} />
-            </div>
+            <EleContext.Provider value={this.state}>
+                <App />
+            </EleContext.Provider>
         );
     }
 }
 
-export default App;
+export default AppWithContext;

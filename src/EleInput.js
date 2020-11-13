@@ -1,3 +1,4 @@
+import { EleContext } from './EleContext';
 function EleInput({ pic, setElePhoto }) {
     return (
         <label>
@@ -12,4 +13,14 @@ function EleInput({ pic, setElePhoto }) {
     );
 }
 
-export default EleInput;
+const EleInputWithContext = ({ pic }) => {
+    return (
+        <EleContext.Consumer>
+            {({ setElePhoto }) => (
+                <EleInput pic={pic} setElePhoto={setElePhoto} />
+            )}
+        </EleContext.Consumer>
+    );
+};
+
+export default EleInputWithContext;
