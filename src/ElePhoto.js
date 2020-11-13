@@ -1,12 +1,17 @@
-function ElePhoto({ elePhoto }) {
+import { EleContext } from './EleContext';
+function ElePhoto() {
     return (
-        <div className="eleWrapper">
-            {elePhoto ? (
-                <img src={elePhoto} alt="an elephant" />
-            ) : (
-                <p>Pick an Elephant!</p>
+        <EleContext.Consumer>
+            {({ elePhoto }) => (
+                <div className="eleWrapper">
+                    {elePhoto ? (
+                        <img src={elePhoto} alt="an elephant" />
+                    ) : (
+                        <p>Pick an Elephant!</p>
+                    )}
+                </div>
             )}
-        </div>
+        </EleContext.Consumer>
     );
 }
 

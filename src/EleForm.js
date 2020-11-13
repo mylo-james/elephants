@@ -1,11 +1,16 @@
 import EleInput from './EleInput';
-function EleForm({ pics, setElePhoto }) {
+import { EleContext } from './EleContext';
+function EleForm() {
     return (
-        <form>
-            {pics.map((pic) => (
-                <EleInput key={pic.name} setElePhoto={setElePhoto} pic={pic} />
-            ))}
-        </form>
+        <EleContext.Consumer>
+            {({ pics }) => (
+                <form>
+                    {pics.map((pic) => (
+                        <EleInput key={pic.name} pic={pic} />
+                    ))}
+                </form>
+            )}
+        </EleContext.Consumer>
     );
 }
 export default EleForm;
